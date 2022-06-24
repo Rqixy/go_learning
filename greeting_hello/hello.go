@@ -14,7 +14,7 @@ func main() {
 	log.SetFlags(0)
 
 	// あいさつメッセージを取得して出力します。
-	message, err := greetings.Hello("")
+	message, err := greetings.Hello("test")
 	if err != nil {
 		log.Fatal(err)
 	}
