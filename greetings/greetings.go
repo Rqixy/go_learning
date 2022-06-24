@@ -16,7 +16,8 @@ func Hello(name string) (string, error) {
 
 	// メッセージに名前を埋め込む挨拶を返します。
 	// message := fmt.Sprintf("Hi, %v. Welcome!", name)
-	var message string = fmt.Sprintf(randomFormat(), name)
+	//var message string = fmt.Sprintf(randomFormat(), name)
+	message := fmt.Sprintf(randomFormat())
 	return message, nil
 }
 
