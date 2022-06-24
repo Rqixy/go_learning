@@ -13,8 +13,10 @@ func main() {
 	log.SetPrefix("greetings:")
 	log.SetFlags(0)
 
+	names := []string{"Gladys", "Samantha", "Darrin"}
+
 	// あいさつメッセージを取得して出力します。
-	message, err := greetings.Hello("test")
+	message, err := greetings.Hellos(names)
 	if err != nil {
 		log.Fatal(err)
 	}

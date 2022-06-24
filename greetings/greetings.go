@@ -20,6 +20,28 @@ func Hello(name string) (string, error) {
 	return message, nil
 }
 
+// Hellos は、指定された各人を関連つけるマップを返します。
+// あいさつ付きメッセージ
+func Hellos(names []string) (map[string]string, error) {
+	// 名前をメッセージに関連つけるためのマップ
+	messages := make(map[string]string)
+
+	// 受信した名前のスライスをループし、呼び出します。
+	// 各名前のメッセージを取得するHello関数
+	for _, name := range names {
+		message, err := Hello(name)
+		if err != nil {
+			return nil, err
+		}
+
+		messages[name] = message
+	}
+
+	// マップで、取得したメッセージを名前に関連つけます
+	return messages, nil
+}
+
+// Initは、関数で使用される変数の初期値を設定します。
 func init() {
 	rand.Seed(time.Now().UnixNano())
 }
